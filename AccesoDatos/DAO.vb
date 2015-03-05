@@ -7,8 +7,9 @@ Imports System.Linq
 Imports System.Collections.Generic
 
 Public Class DAO
+    Implements IDAO
 
-    Public Sub Insertar(ByVal newArticulo As Articulo)
+    Public Sub Insertar(ByVal newArticulo As Articulo) Implements IDAO.Insertar
 
 
         Using conn As New SqlConnection(My.Settings.InventarioConnectionString)
@@ -29,7 +30,7 @@ Public Class DAO
     End Sub
 
 
-    Public Shared Function Listar() As List(Of Articulo)
+    Public Function Listar() As List(Of Articulo) Implements IDAO.Listar
 
         Using conn As New SqlConnection(My.Settings.InventarioConnectionString)
             Dim lista As New List(Of Articulo)

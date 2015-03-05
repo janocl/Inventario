@@ -2,6 +2,8 @@
 Imports AccesoDatos
 
 Public Class ArticuloBL
+
+
     Public Sub Insertar(ByVal newArticulo As Articulo)
 
         Try
@@ -18,8 +20,8 @@ Public Class ArticuloBL
         Dim lista As New List(Of Articulo)
 
         Try
-
-            lista = DAO.Listar
+            Dim dao As New DAO
+            lista = dao.Listar
 
         Catch ex As Exception
 
